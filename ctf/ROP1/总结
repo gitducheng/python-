@@ -1,3 +1,11 @@
 # ret2shell
     1、执行未成功，猜测是bss段无执行权限的原因，后面学会修改bss段权限再回来修改；
     2、发现flat([a,b,c...])函数可以替代字符串拼接传递，不需要再用.decode()转码
+## 二进制文件rop
+    1、ROPgadget --binary rop  --only 'pop|ret' | grep 'eax'
+    2、ROPgadget --binary rop  --only 'pop|ret' | grep 'ebx'
+    3、ecx、edx
+    4、ROPgadget --binary rop  --string '/bin/sh'
+    5、ROPgadget --binary rop  --only 'int'
+## rop3
+    1、增加安装LibcSearcher，https://github.com/lieanu/LibcSearcher
